@@ -65,13 +65,16 @@ export default function Hero({ onApplyClick }: HeroProps) {
 
           <div className="relative opacity-0 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
             <div className="relative flex items-center justify-center">
+              {/* Soft platform to hide image cutoff */}
+              <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-20 bg-slate-950/90 blur-xl rounded-full border border-cyan-500/10" />
+
               <img
                 src="/Students.webp"
                 alt="Students at The Bridge"
-                className="max-h-[420px] w-auto object-contain"
+                className="relative z-10 w-auto object-contain max-h-[520px] sm:max-h-[580px] lg:max-h-[640px]"
               />
 
-              <div className="absolute -bottom-6 -right-6 bg-gradient-accent p-4 rounded-lg shadow-2xl shadow-cyan-500/40 animate-float">
+              <div className="absolute -bottom-6 -right-6 bg-gradient-accent p-4 rounded-lg shadow-2xl shadow-cyan-500/40 animate-float z-20">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
