@@ -1,5 +1,4 @@
 {
-  "//": "Serve index.html for all non-file routes so React Router can handle /cookies-policy, /privacy-policy, etc. on Vercel.",
   "rewrites": [
     {
       "source": "/(.*)",
