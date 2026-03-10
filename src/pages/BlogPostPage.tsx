@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { Twitter, Facebook, Linkedin } from 'lucide-react';
 import { blogPosts } from './BlogPage';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -229,30 +230,33 @@ export default function BlogPostPage() {
         {/* Social share */}
         <div className="mt-8 mb-10">
           <h2 className="text-sm font-semibold text-gray-200 mb-2">Share this article</h2>
-          <div className="flex gap-3 text-sm">
+          <div className="flex gap-3">
             <a
               href={`https://twitter.com/intent/tweet?url=${url}&text=${text}`}
               target="_blank"
               rel="noreferrer"
-              className="text-cyan-400 hover:text-cyan-300"
+              aria-label="Share on Twitter"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-900/80 border border-slate-600 text-cyan-400 hover:border-cyan-400 hover:bg-slate-900 transition-colors"
             >
-              Twitter
+              <Twitter className="w-5 h-5" />
             </a>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
               target="_blank"
               rel="noreferrer"
-              className="text-cyan-400 hover:text-cyan-300"
+              aria-label="Share on Facebook"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-900/80 border border-slate-600 text-cyan-400 hover:border-cyan-400 hover:bg-slate-900 transition-colors"
             >
-              Facebook
+              <Facebook className="w-5 h-5" />
             </a>
             <a
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
               target="_blank"
               rel="noreferrer"
-              className="text-cyan-400 hover:text-cyan-300"
+              aria-label="Share on LinkedIn"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-900/80 border border-slate-600 text-cyan-400 hover:border-cyan-400 hover:bg-slate-900 transition-colors"
             >
-              LinkedIn
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
         </div>

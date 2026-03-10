@@ -63,46 +63,65 @@ export default function FaqPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-gray-100">
       <Navigation onApplyClick={() => {}} />
-      <section className="max-w-3xl mx-auto px-4 py-24">
+      <section className="max-w-5xl mx-auto px-4 py-24">
         <Link to="/" className="text-cyan-400 text-sm mb-6 inline-block">
           ← Back to Home
         </Link>
 
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h1>
-        <p className="text-gray-300 mb-8">
-          If you&apos;re a Nigerian student or NYSC corper and you&apos;re wondering how The Bridge works, start with
-          these common questions.
-        </p>
+        <div className="text-center mb-12">
+          <p className="text-sm font-semibold tracking-wide text-cyan-400 uppercase">
+            Support for future leaders
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold mt-3">
+            Frequently asked questions about The Bridge programmes
+          </h1>
+          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+            Everything you need to know about timelines, commitments, fees, and what life looks like inside The Bridge
+            community.
+          </p>
+        </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={faq.question}
-                className="glass-effect rounded-xl overflow-hidden transition-all duration-300 animate-scale-in"
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between px-4 sm:px-6 py-4 text-left"
-                >
-                  <span className="font-semibold text-white">{faq.question}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-cyan-400 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
+        <div className="bg-slate-900/70 backdrop-blur-xl border border-slate-700/60 rounded-3xl shadow-2xl shadow-slate-950/60 px-4 sm:px-8 py-8 sm:py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
                 <div
-                  className={`px-4 sm:px-6 pb-4 text-gray-300 text-sm transform origin-top transition-all duration-300 ${
-                    isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                  key={faq.question}
+                  className={`rounded-2xl overflow-hidden transition-all duration-300 animate-scale-in border ${
+                    isOpen ? 'border-teal-400/70 bg-slate-900' : 'border-slate-700/70 bg-slate-900/60'
                   }`}
                 >
-                  {faq.answer}
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className={`w-full flex items-center justify-between px-4 sm:px-5 py-4 text-left ${
+                      isOpen ? 'bg-gradient-to-r from-teal-500 to-orange-400 text-slate-950' : ''
+                    }`}
+                  >
+                    <span
+                      className={`font-semibold ${
+                        isOpen ? 'text-slate-950' : 'text-slate-50'
+                      }`}
+                    >
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-slate-950' : 'text-cyan-400'
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`px-4 sm:px-5 pb-4 text-sm text-gray-200 transform origin-top transition-all duration-300 ${
+                      isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
       <Footer />

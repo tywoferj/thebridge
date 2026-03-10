@@ -12,8 +12,8 @@ const pathways: PathwayItem[] = [
   {
     id: 'students',
     type: 'student',
-    title: 'For Nigerian Students',
-    image: 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'General Students',
+    image: '/focused-female.webp',
     description: 'Unlock your potential while still in school',
     benefits: ['Scholarships', 'Internships', 'Mentorship', 'Certification'],
     programs: 25,
@@ -21,8 +21,8 @@ const pathways: PathwayItem[] = [
   {
     id: 'corpers',
     type: 'corper',
-    title: 'For NYSC Corpers',
-    image: 'https://images.pexels.com/photos/3808016/pexels-photo-3808016.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'NYSC Corpers',
+    image: '/NYSC.webp',
     description: 'Bridge your service year to career success',
     benefits: ['Career Transition', 'Professional Skills', 'Job Placement', 'Networking'],
     programs: 18,
