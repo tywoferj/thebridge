@@ -1,0 +1,9 @@
+{
+  "//": "Make Vercel serve index.html for all non-file routes so React Router can handle them.",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
